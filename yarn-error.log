@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js run build:prod
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js test
 
 PATH: 
-  C:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\;C:\Users\Lou\AppData\Local\Microsoft\WindowsApps;C:\Users\Lou\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\Lou\AppData\Local\Yarn\bin
+  C:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\;C:\Users\Lou\AppData\Local\Microsoft\WindowsApps;C:\Users\Lou\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\Lou\AppData\Local\Yarn\bin;C:\Program Files\Heroku\bin
 
 Yarn version: 
   1.3.2
@@ -14,18 +14,20 @@ Platform:
   win32 x64
 
 npm manifest: 
-  yarn run build:prod{
+  {
     "name": "expensify",
     "version": "1.0.0",
     "main": "index.js",
-    "author": "Andrew Mead",
+    "author": "Lou Vuono",
     "license": "MIT",
     "scripts": {
       "serve": "live-server public/",
       "build:dev": "webpack",
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
-      "test": "jest --config=jest.config.json"
+      "test": "jest --config=jest.config.json",
+      "start": "node server/server.js",
+      "heroku-postbuild": "yarn run build:prod"
     },
     "dependencies": {
       "babel-cli": "6.24.1",
@@ -36,15 +38,13 @@ npm manifest:
       "babel-preset-env": "1.5.2",
       "babel-preset-react": "6.24.1",
       "css-loader": "0.28.4",
-      "enzyme": "2.9.1",
-      "enzyme-to-json": "1.5.1",
       "express": "4.15.4",
       "extract-text-webpack-plugin": "3.0.0",
-      "jest": "20.0.4",
       "live-server": "^1.2.0",
       "moment": "2.18.1",
       "node-sass": "4.5.3",
       "normalize.css": "7.0.0",
+      "numeral": "2.0.6",
       "react": "15.6.1",
       "react-addons-shallow-compare": "15.6.0",
       "react-dates": "12.3.0",
@@ -52,13 +52,18 @@ npm manifest:
       "react-modal": "2.2.2",
       "react-redux": "5.0.5",
       "react-router-dom": "4.1.2",
-      "react-test-renderer": "15.6.1",
       "redux": "3.7.2",
       "sass-loader": "6.0.6",
       "style-loader": "0.18.2",
       "uuid": "3.1.0",
       "validator": "8.0.0",
       "webpack": "3.1.0",
+    },
+    "devDependencies": {
+      "enzyme": "2.9.1",
+      "enzyme-to-json": "1.5.1",
+      "jest": "20.0.4",
+      "react-test-renderer": "15.6.1",
       "webpack-dev-server": "2.5.1"
     }
   }
@@ -4129,6 +4134,10 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   
+  numeral@2.0.6:
+    version "2.0.6"
+    resolved "https://registry.yarnpkg.com/numeral/-/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
+  
   "nwmatcher@>= 1.3.9 < 2.0.0":
     version "1.4.3"
     resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.3.tgz#64348e3b3d80f035b40ac11563d278f8b72db89c"
@@ -6167,7 +6176,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  SyntaxError: C:\Users\Lou\Documents\React Training\ExpensifyApp\package.json: Unexpected token y in JSON at position 0
+  SyntaxError: C:\Users\Lou\Documents\React Training\ExpensifyApp\package.json: Unexpected token } in JSON at position 1303
       at JSON.parse (<anonymous>)
       at C:\Program Files (x86)\Yarn\lib\cli.js:770:59
       at Generator.next (<anonymous>)
