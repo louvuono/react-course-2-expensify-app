@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js test
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add firebase@4.2.0
 
 PATH: 
   C:\ProgramData\Oracle\Java\javapath;c:\Program Files (x86)\Intel\iCLS Client\;c:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\Scripts\;C:\Users\Lou\AppData\Local\Programs\Python\Python35-32\;C:\Users\Lou\AppData\Local\Microsoft\WindowsApps;C:\Users\Lou\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\Lou\AppData\Local\Yarn\bin;C:\Program Files\Heroku\bin
@@ -57,7 +57,7 @@ npm manifest:
       "style-loader": "0.18.2",
       "uuid": "3.1.0",
       "validator": "8.0.0",
-      "webpack": "3.1.0",
+      "webpack": "3.1.0"
     },
     "devDependencies": {
       "enzyme": "2.9.1",
@@ -6176,10 +6176,4 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  SyntaxError: C:\Users\Lou\Documents\React Training\ExpensifyApp\package.json: Unexpected token } in JSON at position 1303
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:770:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:92:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:103:13
-      at <anonymous>
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Lou\Documents\React Training\ExpensifyApp\node_modules\acorn-globals\node_modules\.bin'
