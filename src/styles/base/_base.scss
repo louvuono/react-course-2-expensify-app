@@ -1,23 +1,26 @@
-// rem
-html {
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
     font-size: 62.5%;
-}
-
-body {
-    background: white;
+  }
+  
+  body {
+    color: $dark-grey;
     font-family: Helvetica, Arial, sans-serif;
     font-size: $m-size;
-}
-
-button {
+    line-height: 1.6;
+  }
+  
+  button {
     cursor: pointer;
-}
-
-button:disabled {
+  }
+  
+  button:disabled {
     cursor: default;
-}
-
-.is-active {
+  }
+  
+  .is-active {
     font-weight: bold;
-}
-
+  }
